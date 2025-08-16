@@ -1,5 +1,8 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
+const OLLAMA_URL = process.env.OLLAMA_URL;
 export default async function sendToLlama(question) {
     const payload = {
         model: "phi4-mini:latest",
@@ -16,7 +19,7 @@ export default async function sendToLlama(question) {
     }
     try {
         console.log('Preparando respuesta de IA...')
-        const res = await axios.post('http://127.0.0.1:11434/api/generate', payload);
+        const res = await axios.post(OLLAMA_URL, payload);
         console.log('Respuesta de IA obtenida con exito')
         return res.data.response;
     } catch (err) {
