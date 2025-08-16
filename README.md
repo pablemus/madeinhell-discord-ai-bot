@@ -75,5 +75,5 @@ Ready! logged in as TuBot#1234
 En Discord, prueba:
 
 ```
-/ask texto: ¿Qué es Node.js?
+/ask ¿Qué es Node.js?
 ```
